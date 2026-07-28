@@ -9,7 +9,7 @@ on:
 
 env:
   CLIENT: keepme
-  CLIENT_NAME: keepme
+  CLIENT_NAME: Test Demo Client
   HEADLESS: 'true'
   EMAIL: ${{ secrets.KEEPME_EMAIL }}
   PASSWORD: ${{ secrets.KEEPME_PASSWORD }}
