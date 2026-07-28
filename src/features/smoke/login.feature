@@ -56,8 +56,7 @@ Scenario: Login to perfectgym CRM application
 
 @KeepmeAPI @smoke
 Scenario: Login to keepme API
-  Given user navigates to the Keepme CRM application
-  And user logs in to Keepme CRM via API
+  Given user logs in to Keepme CRM via API
   Then lead should exist in Keepme CRM via API
   
 @PerfectgymAPI @smoke  
