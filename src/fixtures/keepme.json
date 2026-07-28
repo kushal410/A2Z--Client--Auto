@@ -1,0 +1,24 @@
+{
+  "fallback": {
+    "enabled": true,
+    "messages": [
+      "Namaste! Sorry, I couldn't understand your request.",
+      "Please rephrase your question or choose one of the available options.",
+      "I'm here to help with Kumari Bank services. Kindly try again."
+    ]
+  },
+  "validMessages": [
+    "Hi",
+    "Hello",
+    "Namaste",
+    "Banking Services",
+    "Accounts",
+    "Loans",
+    "Cards",
+    "ATM/Branch",
+    "Contact Us",
+    "Feedback",
+    "Complaint"
+  ],
+  "footer": "Developed by palmmind"
+}

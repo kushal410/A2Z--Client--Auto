@@ -1,0 +1,183 @@
+{
+  "booking":{
+    "bookingday": "Tomorrow",
+    "bookingtime": "5:00 PM",
+    "Firstname": "Keepmerakshan",
+    "Lastname": "Testdangol",
+    "email": "rakshan@keepme.ai",
+    "phone": "+9779860664388",
+    "venue_id": "1"
+  },
+
+  "meta": {
+    "client": "cedardale",
+    "clientName": "CEDARDALE HEALTH",
+    "industry": "health_fitness"
+  },
+  "greeting": {
+    "expectedMessage": "Cedar your AI assistant",
+    "expectedKeywords": [
+      "hello",
+      "welcome",
+      "assist",
+      "help"
+    ]
+  },
+  "conversation": {
+    "fullName": "Keepme Test User",
+    "emailOrMobile": "kepme@test.ai",    
+    "phone": "5551234567",
+    "flow": [
+      {
+        "message": "Hi",
+        "expectedKeywords": [
+          "hello",
+          "assist",
+          "help"
+        ]
+      },
+      {
+        "message": "I want to lose weight",
+        "expectedKeywords": [
+          "weight",
+          "fitness",
+          "program",
+          "trainer",
+          "goal",
+          "help",
+          "assist"
+        ]
+      },
+      {
+        "message": "Do you have personal training?",
+        "expectedKeywords": [
+          "personal",
+          "trainer",
+          "training",
+          "session",
+          "offer"
+        ]
+      },
+      {
+        "message": "I would like to book a consultation",
+        "expectedKeywords": [
+          "personal",
+          "trainer",
+          "consultation",
+          "schedule",
+          "book"
+        ]
+      },
+      {
+        "message": "Book a tour",
+        "expectedKeywords": [
+          "tour",
+          "schedule",
+          "book",
+          "time",
+          "when"
+        ]
+      },
+      {
+        "message": "Today",
+        "expectedKeywords": [
+          "tour",
+          "booking",
+          "date",
+          "when",
+          "time"
+        ]
+      },
+      {
+        "message": "4:00 PM",
+        "expectedKeywords": [
+          "available",
+          "slot",
+          "time",
+          "afternoon",
+          "evening",
+          "PM"
+        ]
+      },
+      {
+        "message": "DYNAMIC_TIME_SLOT",
+        "expectedKeywords": [
+          "available",
+          "slot",
+          "time",
+          "name",
+          "first",
+          "last"
+        ]
+      },
+      {
+        "message": "Keepme Test User",
+        "expectedKeywords": [
+          "name",
+          "last",
+          "email",
+          "contact",
+          "information",
+          "provide"
+        ]
+      },
+      {
+        "message": "kepme@test.io",
+        "expectedKeywords": [
+          "email",
+          "phone",
+          "contact",
+          "number",
+          "provide"
+        ]
+      },
+      {
+        "message": "5551234567",
+        "expectedKeywords": [
+          "confirm",
+          "thank",
+          "booking",
+          "booked",
+          "confirmed",
+          "scheduled",
+          "complete"
+        ]
+      }
+    ]
+  }, 
+  "booking1": {
+    "confirmationKeywords": [
+      "booked",
+      "confirmed",
+      "scheduled",
+      "thank you",
+      "tour",
+      "today",
+      "confirmation",
+      "complete",
+      "way"
+    ]
+  },
+  "fallback": {
+    "enabled": true,
+    "messages": [
+      "Sorry, I didn't understand that.",
+      "Can you please rephrase?",
+      "I'm not sure I understood your request."
+    ]
+  },
+  "validMessages": [
+    "Hello",
+    "Hi",
+    "Good morning"
+  ],
+  "bookingSuccess": [
+    "booked",
+    "booked Successfully",
+    "Confirmation are on the way"
+  ],
+  "keepme_crm":{
+    "leadStatus": "Tour",
+    "outcomeStatus": "Scheduled"
+  }
+}

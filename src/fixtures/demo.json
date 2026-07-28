@@ -1,0 +1,166 @@
+{
+    "meta": {
+        "client": "healthplus",
+        "industry": "health_fitness"
+    },
+    "greeting": {
+        "expectedMessage": "Welcome to Demo Account",
+        "expectedKeywords": [
+            "hello",
+            "welcome",
+            "assist",
+            "help"
+        ]
+    },
+    "conversation": {
+        "fullName": "Keepmerakshan3 Testdangol",
+        "emailOrMobile": "rakshan+3@keepme.ai",
+        "phone": "+9779860664388",
+        "flow": [
+            {
+                "message": "Hi",
+                "expectedKeywords": [
+                    "hello",
+                    "assist",
+                    "help"
+                ]
+            },
+            {
+                "message": "I want to lose weight",
+                "expectedKeywords": [
+                    "weight",
+                    "fitness",
+                    "program",
+                    "trainer",
+                    "consultation"
+                ]
+            },
+            {
+                "message": "Do you have personal training?",
+                "expectedKeywords": [
+                    "personal",
+                    "trainer",
+                    "session",
+                    "plan",
+                    "custom"
+                ]
+            },
+            {
+                "message": "I would like to book a consultation",
+                "expectedKeywords": [
+                    "schedule",
+                    "booking",
+                    "consultation",
+                    "tour",
+                    "appointment"
+                ]
+            },
+            {
+                "message": "Book a tour",
+                "expectedKeywords": [
+                    "tour",
+                    "schedule",
+                    "book",
+                    "time",
+                    "when"
+                ]
+            },
+            {
+                "message": "Today",
+                "expectedKeywords": [
+                    "tour",
+                    "booking",
+                    "date",
+                    "when",
+                    "time"
+                ]
+            },
+            {
+                "message": "4:00 PM",
+                "expectedKeywords": [
+                    "available",
+                    "slot",
+                    "time",
+                    "afternoon",
+                    "evening",
+                    "PM"
+                ]
+            },
+            {
+                "message": "DYNAMIC_TIME_SLOT",
+                "expectedKeywords": [
+                    "available",
+                    "slot",
+                    "time",
+                    "name",
+                    "first",
+                    "last"
+                ]
+            },
+            {
+                "message": "Test",
+                "expectedKeywords": [
+                    "name",
+                    "last",
+                    "email",
+                    "contact",
+                    "information",
+                    "provide"
+                ]
+            },
+            {
+                "message": "User",
+                "expectedKeywords": [
+                    "name",
+                    "email",
+                    "contact",
+                    "information",
+                    "provide"
+                ]
+            },
+            {
+                "message": "testuser@example.com",
+                "expectedKeywords": [
+                    "email",
+                    "phone",
+                    "contact",
+                    "number",
+                    "provide"
+                ]
+            },
+            {
+                "message": "5551234567",
+                "expectedKeywords": [
+                    "confirm",
+                    "thank",
+                    "booking",
+                    "booked",
+                    "confirmed",
+                    "scheduled",
+                    "complete"
+                ]
+            }
+        ]
+    },
+    "booking": {
+        "confirmationKeywords": [
+            "booked",
+            "confirmed",
+            "scheduled",
+            "thank you",
+            "tour",
+            "today",
+            "confirmation",
+            "complete",
+            "way"
+        ]
+    },
+    "fallback": {
+        "enabled": true,
+        "messages": [
+            "Sorry, I didn't understand that.",
+            "Can you please rephrase?",
+            "I'm not sure I understood your request."
+        ]
+    }
+}

@@ -1,0 +1,209 @@
+{
+
+  "meta": {
+        "client": "testDemoClient",
+        "industry": "keepmetest1"
+    },
+    "greeting": {
+        "expectedMessage": "What can I do for you today?",
+        "expectedKeywords": [
+            "Hello",
+            "welcome",
+            "assist",
+            "help"
+        ]
+    },
+    "conversation": {
+        "fullName": "Keepmerakshan Testdangol",
+        "emailOrMobile": "rakshan@keepme.ai",
+        "phone": "+9779860664388",
+        "flow": [
+            {
+                "message": "Hi",
+                "expectedKeywords": [
+                    "hello",
+                    "assist",
+                    "help",
+                    "Hello"
+                ]
+            },
+            {
+                "message": "I want to lose weight",
+                "expectedKeywords": [
+                    "weight",
+                    "fitness",
+                    "program",
+                    "trainer",
+                    "consultation"
+                ]
+            },
+            {
+                "message": "Do you have personal training?",
+                "expectedKeywords": [
+                    "personal",
+                    "trainer",
+                    "session",
+                    "plan",
+                    "custom"
+                ]
+            },
+            {
+                "message": "I would like to book a consultation",
+                "expectedKeywords": [
+                    "schedule",
+                    "booking",
+                    "consultation",
+                    "tour",
+                    "appointment"
+                ]
+            },
+            {
+                "message": "Book a tour",
+                "expectedKeywords": [
+                    "tour",
+                    "schedule",
+                    "book",
+                    "time",
+                    "when"
+                ]
+            },
+            {
+                "message": "Today",
+                "expectedKeywords": [
+                    "tour",
+                    "booking",
+                    "date",
+                    "when",
+                    "time"
+                ]
+            },
+            {
+                "message": "05:00 PM",
+                "expectedKeywords": [
+                    "available",
+                    "slot",
+                    "time",
+                    "afternoon",
+                    "evening",
+                    "PM"
+                ]
+            },
+            {
+                "message": "DYNAMIC_TIME_SLOT",
+                "expectedKeywords": [
+                    "slot",
+                    "time",
+                    "name",
+                    "first",
+                    "last"
+                ]
+            },
+            {
+                "message": "Keepmerakshan",
+                "expectedKeywords": [
+                    "name",
+                    "last",
+                    "email",
+                    "contact",
+                    "information",
+                    "provide"
+                ]
+            },
+            {
+                "message": "Testdangol",
+                "expectedKeywords": [
+                    "name",
+                    "email",
+                    "contact",
+                    "information",
+                    "provide"
+                ]
+            },
+            {
+                "message": "rakshan@keepme.ai",
+                "expectedKeywords": [
+                    "email",
+                    "phone",
+                    "contact",
+                    "number",
+                    "provide"
+                ]
+            },
+            {
+                "message": "+9779860664388",
+                "expectedKeywords": [
+                    "confirm",
+                    "thank",
+                    "booking",
+                    "booked",
+                    "confirmed",
+                    "scheduled",
+                    "complete"
+                ]
+            }
+        ]
+    },
+    "booking1": {
+        "confirmationKeywords": [
+            "booked",
+            "confirmed",
+            "scheduled",
+            "thank you",
+            "tour",
+            "today",
+            "confirmation",
+            "complete",
+            "way"
+        ]
+    },
+    "fallback": {
+        "enabled": true,
+        "messages": [
+            "Sorry, I didn't understand that.",
+            "Can you please rephrase?",
+            "I'm not sure I understood your request.",
+            "I'm an AI assistant here",
+            "help with",
+            "club and fitness"
+        ]
+    },
+
+  "booking":{
+    "bookingday": "Tomorrow",
+    "bookingtime": "5:25 PM",
+    "Firstname": "Keepmerakshan",
+    "Lastname": "Testdangol",
+    "email": "rakshan@keepme.ai",
+    "phone": "+9779860664388",
+    "venue_id": "48341"
+  },
+
+  "fallback1": {
+    "enabled": true,
+    "messages": [
+      "Sorry, I didn't understand that.",
+      "Can you please rephrase?",
+      "I'm not sure I understood your request.",
+      "I'm an AI assistant here",
+      "help with",
+      "club and fitness"
+    ]
+  },
+  "validMessages": [
+    "Hello",
+    "Hi",
+    "Good morning"
+  ],
+  "bookingSuccess": [
+    "booked",
+    "booked Successfully",
+    "Confirmation are on the way"
+  ],
+  "keepme_crm":{
+    "leadStatus": "Tour",
+    "outcomeStatus": "Scheduled"
+  },
+  "perfectGym_crm": {
+    "leadStatus": "New - No contact Made"
+  }
+}
