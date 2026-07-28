@@ -51,7 +51,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: smoke-reports
-          path: reports/
+          path: |
+            reports/
+            screenshots/
+            videos/
           if-no-files-found: ignore
 
   e2e-tests:
