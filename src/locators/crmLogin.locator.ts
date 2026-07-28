@@ -12,6 +12,11 @@ export const crmLoginLocators = {
         value: 'email',
     },
 
+    continueButton: {
+        strategy: 'text',
+        value: 'Continue',
+    },
+
     passwordInput: {
         strategy: 'name',
         value: 'password',
@@ -19,7 +24,7 @@ export const crmLoginLocators = {
 
     loginButton: {
         strategy: 'text',
-        value: 'Log In',
+        value: 'Sign In',
     },
 
     switchtoSales: {

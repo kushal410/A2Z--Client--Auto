@@ -17,6 +17,8 @@ export class CrmLoginPage extends BasePage {
             throw new Error('Username is not a string');
         }
         await resolveLocator(this.page, crmLoginLocators.emailInput).fill(ENV.crmConfig.username);
+        await resolveLocator(this.page, crmLoginLocators.continueButton).click();
+
         if (typeof ENV.crmConfig.password !== 'string') {
             throw new Error('Password is not a string');
         }
