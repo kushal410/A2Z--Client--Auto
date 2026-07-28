@@ -13,16 +13,16 @@ export class CrmLoginPage extends BasePage {
     }
 
     async login(): Promise<void> {
-        if (typeof ENV.crmConfig.username !== 'string') {
-            throw new Error('Username is not a string');
+        if (typeof ENV.email !== 'string') {
+            throw new Error('Email is not a string');
         }
-        await resolveLocator(this.page, crmLoginLocators.emailInput).fill(ENV.crmConfig.username);
+        await resolveLocator(this.page, crmLoginLocators.emailInput).fill(ENV.email);
         await resolveLocator(this.page, crmLoginLocators.continueButton).click();
 
-        if (typeof ENV.crmConfig.password !== 'string') {
+        if (typeof ENV.password !== 'string') {
             throw new Error('Password is not a string');
         }
-        await resolveLocator(this.page, crmLoginLocators.passwordInput).fill(ENV.crmConfig.password);
+        await resolveLocator(this.page, crmLoginLocators.passwordInput).fill(ENV.password);
         await resolveLocator(this.page, crmLoginLocators.loginButton).click();
     }
 
