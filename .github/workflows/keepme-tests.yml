@@ -71,3 +71,56 @@ jobs:
           name: playwright-report
           path: playwright-report/
           if-no-files-found: ignore
+
+  notify-slack:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    needs: [smoke-tests, e2e-tests]
+    if: always()
+    steps:
+      - name: Determine overall result
+        id: result
+        shell: bash
+        run: |
+          smoke="${{ needs.smoke-tests.result }}"
+          e2e="${{ needs.e2e-tests.result }}"
+
+          if [[ "$smoke" == "success" && "$e2e" == "success" ]]; then
+            echo "status=success" >> "$GITHUB_OUTPUT"
+            echo "color=#36a64f" >> "$GITHUB_OUTPUT"
+            echo "message=✅ CI passed for ${{ github.repository }}" >> "$GITHUB_OUTPUT"
+          elif [[ "$smoke" == "cancelled" || "$e2e" == "cancelled" ]]; then
+            echo "status=cancelled" >> "$GITHUB_OUTPUT"
+            echo "color=#f59e0b" >> "$GITHUB_OUTPUT"
+            echo "message=⚠️ CI was cancelled for ${{ github.repository }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=failure" >> "$GITHUB_OUTPUT"
+            echo "color=#dc2626" >> "$GITHUB_OUTPUT"
+            echo "message=❌ CI failed for ${{ github.repository }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send Slack notification
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        shell: bash
+        run: |
+          if [[ -z "$SLACK_WEBHOOK_URL" ]]; then
+            echo "SLACK_WEBHOOK_URL secret is not configured. Skipping Slack notification."
+            exit 0
+          fi
+
+          curl -X POST -H 'Content-type: application/json' \
+            --data "{
+              \"text\": \"${{ steps.result.outputs.message }}\",
+              \"attachments\": [{
+                \"color\": \"${{ steps.result.outputs.color }}\",
+                \"blocks\": [{
+                  \"type\": \"section\",
+                  \"text\": {
+                    \"type\": \"mrkdwn\",
+                    \"text\": \"*Repository:* ${{ github.repository }}\\n*Branch:* ${{ github.ref_name }}\\n*Commit:* ${{ github.sha }}\\n*Workflow:* ${{ github.workflow }}\\n*Run:* ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\\n*Status:* ${{ steps.result.outputs.status }}\"
+                  }
+                }]
+              }]
+            }" \
+            "$SLACK_WEBHOOK_URL"
