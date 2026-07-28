@@ -31,7 +31,7 @@ export const ENV = {
   client: CLIENT,
   clientName: CLIENT_NAME!,  
   crm: CRM,
-  headless: process.env.HEADLESS !== 'true',
+  headless: process.env.HEADLESS === 'true',
   baseUrl: process.env.BASE_URL!,
   email: process.env.EMAIL!,
   password: process.env.PASSWORD!,

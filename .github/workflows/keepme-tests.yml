@@ -41,7 +41,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Run smoke tests
         run: yarn test:smoke:keepme
@@ -70,7 +70,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium firefox webkit
 
       - name: Run E2E tests
         run: yarn test:e2e
