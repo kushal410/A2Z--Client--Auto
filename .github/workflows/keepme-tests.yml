@@ -9,12 +9,20 @@ on:
 
 env:
   CLIENT: keepme
+  CLIENT_NAME: keepme
   HEADLESS: 'true'
   EMAIL: ${{ secrets.KEEPME_EMAIL }}
   PASSWORD: ${{ secrets.KEEPME_PASSWORD }}
   API_KEY: ${{ secrets.KEEPME_API_KEY }}
   ORGANIZATION_ID: ${{ secrets.KEEPME_ORGANIZATION_ID }}
   BASE_URL: ${{ secrets.KEEPME_BASE_URL }}
+  CRM_URL: ${{ secrets.KEEPME_CRM_URL }}
+  CRM_USERNAME: ${{ secrets.KEEPME_CRM_USERNAME }}
+  CRM_PASSWORD: ${{ secrets.KEEPME_CRM_PASSWORD }}
+  API_BASE_URL: ${{ secrets.KEEPME_API_BASE_URL }}
+  XCLIENTID: ${{ secrets.KEEPME_XCLIENTID }}
+  XCLIENTSECRET: ${{ secrets.KEEPME_XCLIENTSECRET }}
+  COOKIE: ${{ secrets.KEEPME_COOKIE }}
 
 jobs:
   smoke-tests:
@@ -31,6 +39,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
 
       - name: Run smoke tests
         run: yarn test:smoke:keepme
